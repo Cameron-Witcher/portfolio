@@ -1,0 +1,25 @@
+package org.cameroncreates.utils;
+
+import com.quiptmc.core.QuiptIntegration;
+import com.quiptmc.core.config.ConfigManager;
+import com.quiptmc.core.sql.SqlDatabase;
+import com.quiptmc.core.sql.SqlUtils;
+import org.cameroncreates.config.ApiConfig;
+import org.cameroncreates.managers.ServerManager;
+import org.cameroncreates.managers.UptimeManager;
+
+public class Utils {
+
+    public final ApiConfig config;
+    public final ServerManager serverManager;
+    public final UptimeManager uptimeManager;
+
+    public Utils(QuiptIntegration integration) {
+        config = ConfigManager.registerConfig(integration, ApiConfig.class);
+        serverManager = new ServerManager(integration);
+        uptimeManager = new UptimeManager(integration);
+        integration.enable();
+    }
+
+
+}
