@@ -29,12 +29,12 @@ public class Main extends SpringBootServletInitializer {
 
         @Override
         public File dataFolder() {
-            return new File("vanillaflux");
+            return new File("data");
         }
 
         @Override
         public String name() {
-            return "VanillaFlux-website";
+            return "Portfolio-website";
         }
 
         @Override
