@@ -17,6 +17,7 @@ public class PageController {
         model.addAttribute("email", "cameronwitcher1@gmail.com");
         model.addAttribute("name", "Cameron Witcher");
         model.addAttribute("phone", "+1 (785) 214-0119");
+        model.addAttribute("projects", Projects.values());
         return "home";
     }
 

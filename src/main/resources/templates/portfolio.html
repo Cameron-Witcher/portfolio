@@ -49,10 +49,10 @@
 
       <nav id="navmenu" class="navmenu">
         <ul>
-          <li><a href="#hero">Home<br></a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
+          <li><a href="/">Home<br></a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#services">Services</a></li>
+          <li><a href="/#portfolio">Portfolio</a></li>
           <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul>
               <li><a href="#">Dropdown 1</a></li>
@@ -70,7 +70,7 @@
               <li><a href="#">Dropdown 4</a></li>
             </ul>
           </li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="/#contact">Contact</a></li>
         </ul>
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
@@ -107,20 +107,8 @@
           </script>
           <div class="swiper-wrapper align-items-center">
 
-            <div class="swiper-slide">
-              <img th:src="@{/assets/img/portfolio/app-1.jpg}" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img th:src="@{/assets/img/portfolio/product-1.jpg}" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img th:src="@{/assets/img/portfolio/branding-1.jpg}" alt="">
-            </div>
-
-            <div class="swiper-slide">
-              <img th:src="@{/assets/img/portfolio/books-1.jpg}" alt="">
+            <div th:each="image : ${projectId.images}" class="swiper-slide">
+              <img th:src="@{'/assets/img/portfolio/' + ${image}}" alt="">
             </div>
 
           </div>
@@ -133,13 +121,8 @@
 
           <div class="col-lg-8" data-aos="fade-up">
             <div class="portfolio-description">
-              <h2>This is an example of portfolio details</h2>
-              <p>
-                Autem ipsum nam porro corporis rerum. Quis eos dolorem eos itaque inventore commodi labore quia quia. Exercitationem repudiandae officiis neque suscipit non officia eaque itaque enim. Voluptatem officia accusantium nesciunt est omnis tempora consectetur dignissimos. Sequi nulla at esse enim cum deserunt eius.
-              </p>
-              <p>
-                Amet consequatur qui dolore veniam voluptatem voluptatem sit. Non aspernatur atque natus ut cum nam et. Praesentium error dolores rerum minus sequi quia veritatis eum. Eos et doloribus doloremque nesciunt molestiae laboriosam.
-              </p>
+              <h2><span th:text="${projectId.name()}"></span></h2>
+              <p><span th:text="${projectId.description()}"></span></p>
 
               <div class="testimonial-item">
                 <p>
