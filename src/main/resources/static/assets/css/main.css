@@ -574,7 +574,7 @@ h6 {
 # Global Page Titles & Breadcrumbs
 --------------------------------------------------------------*/
 .page-title {
-  --background-color: color-mix(in srgb, var(--default-color), transparent 96%);
+  --background-color: #000;
   color: var(--default-color);
   background-color: var(--background-color);
   padding: 25px 0;
